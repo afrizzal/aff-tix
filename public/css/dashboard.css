@@ -1,0 +1,9 @@
+body {
+  background: white;
+}
+
+.main-content {
+  background: #808080;
+  min-height: 100vh;
+}
+
