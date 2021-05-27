@@ -1,5 +1,6 @@
 body {
     background:white;
+    color: #656E88
 }
 
 .main-content{
@@ -21,5 +22,34 @@ body {
 .nav-link.active{
     opacity: 1;
     color: #000;
+    font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0px;
+}
+
+.card-header h3{
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+table.table tr th{
+    color: #737373
+}
+
+table.table tr td{
+    color: #737373;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+.pagination{
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group label{
+    margin-bottom: 0px;
     font-weight: bold;
 }
