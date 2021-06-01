@@ -101,7 +101,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect('dashboard/user/edit/'.$id)
+            return redirect('dashboard/users/edit/'.$id)
                 ->withErrors($validator)
                 ->withInput();
         }else{
