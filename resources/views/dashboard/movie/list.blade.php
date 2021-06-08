@@ -5,12 +5,22 @@
             <a href="{{ route('dashboard.movies.create') }}" class="btn btn-primary btn-sm">+ Movie</a>
         </div>
 
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            <strong>{{ session()->get('message') }}</strong>
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+        </div>
+        @endif
+
         <div class="card">
             <div class="card-header">
                 <div class="row">
                     <div class="col-8 align-self-center">
                         <h3>Movies</h3>
                     </div>
+
                     <div class="col-4">
                         <form method="get" action="{{ url('dashboard/movies') }}">
                             <div class="input-group">
@@ -18,7 +28,9 @@
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary btn-sm">Search</button>
                                 </div>
+                            </div>
                         </form>
+                    </div>
                 </div>
             </div>
 
@@ -50,7 +62,7 @@
                 </table>
                 {{ $movies->appends($request)->links() }}
                 @else
-                    <h4 class="text-center p-3"> Belum ada data movies</h4>
+                    <h4 class="text-center p-3">{{ __('messages.no_data', ['module' => 'Theater']) }}</h4>
                 @endif
             </div>
         </div>

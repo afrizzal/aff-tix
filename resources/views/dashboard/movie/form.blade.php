@@ -56,6 +56,7 @@
                 </div>
             </div>
         </div>
+
         @if(isset($movie))
         <div class="modal fade" id="deleteModal">
             <div class="modal-dialog">
