@@ -151,6 +151,12 @@ class TheaterController extends Controller
      */
     public function destroy(Theater $theater)
     {
-        //
+        $title = $theater->theater;
+
+        $theater->delete();
+
+        return redirect()
+            ->route('dashboard.theaters')
+            ->with('message', __('messages.delete', ['title' => $title]));
     }
 }
