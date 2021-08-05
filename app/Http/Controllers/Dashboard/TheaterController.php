@@ -99,7 +99,16 @@ class TheaterController extends Controller
      */
     public function edit(Theater $theater)
     {
-        //
+        {
+        $active = 'Theaters';
+
+        return view('dashboard/theater/form', [
+            'theater'   => $theater,
+            'active'    => $active,
+            'url'       => 'dashboard.theaters.update',
+            'button'    => 'Update'
+        ]);
+    }
     }
 
     /**
