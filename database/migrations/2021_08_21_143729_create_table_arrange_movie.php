@@ -13,14 +13,14 @@ class CreateTableArrangeMovie extends Migration
      */
     public function up()
     {
-        Schema::create('table_arrange_movie', function (Blueprint $table) {
+        Schema::create('arrange_movie', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('theater_id')->constrained('theaters')->onDelete('cascade');
-            $table->foreignId('movie_id')->constrained('movies')->onDelete('cascade');
+            $table->foreignId('theater_id')->constrained('theaters');
+            $table->foreignId('movie_id')->constrained('movies');
             $table->string('studio');
             $table->integer('price');
-            $table->json('seats');
-            $table->json('schedules');
+            $table->text('seats');
+            $table->text('schedules');
             $table->enum('status', ['coming soon', 'in theater', 'finish']);
             $table->timestamps();
         });
