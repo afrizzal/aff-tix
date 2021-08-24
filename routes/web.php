@@ -42,6 +42,14 @@ Route::get('/dashboard/theaters/{theater}', 'Dashboard\TheaterController@edit')-
 Route::put('/dashboard/theaters/{theater}', 'Dashboard\TheaterController@update')->name('dashboard.theaters.update');
 Route::delete('/dashboard/theaters/{theater}', 'Dashboard\TheaterController@destroy')->name('dashboard.theaters.delete');
 
+//arrange movie
+Route::get('/dashboard/theaters/arrange/movies/{theater}', 'Dashboard\ArrangeMovieController@index')->name('dashboard.theaters.arrange.movie');
+Route::get('/dashboard/theaters/arrange/movies/create/{theater}', 'Dashboard\ArrangeMovieController@create')->name('dashboard.theaters.arrange.movie.create');
+Route::post('/dashboard/theaters/arrange/movies', 'Dashboard\ArrangeMovieController@store')->name('dashboard.theaters.arrange.movie.store');
+Route::get('/dashboard/theaters/arrange/movies/{theater}/{arrangeMovie}', 'Dashboard\ArrangeMovieController@edit')->name('dashboard.theaters.arrange.movie.edit');
+Route::put('/dashboard/theaters/arrange/movies/{arrangeMovie}', 'Dashboard\ArrangeMovieController@update')->name('dashboard.theaters.arrange.movie.update');
+Route::delete('/dashboard/theaters/arrange/movies/{arrangeMovie}', 'Dashboard\ArrangeMovieController@destroy')->name('dashboard.theaters.arrange.movie.delete');
+
 //Users
 Route::get('/dashboard/users', 'Dashboard\UserController@index')->name('dashboard.users');
 Route::get('/dashboard/users/edit/{id}', 'Dashboard\UserController@edit')->name('dashboard.users.edit');
